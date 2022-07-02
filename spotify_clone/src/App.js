@@ -4,11 +4,14 @@ import Login from "./Login";
 import { getTokenFromUrl } from "./spotify";
 
 function App() {
-  const [token, setToken] = useState();
+  const [token, setToken] = useState(null);
   useEffect(() => {
     const hash = getTokenFromUrl();
     window.location.hash = "";
-    const token = hash.access_token;
+    const _token = hash.access_token;
+    if (_token) {
+      setToken(_token);
+    }
     console.log("I have a token", token);
   }, []);
   return (
