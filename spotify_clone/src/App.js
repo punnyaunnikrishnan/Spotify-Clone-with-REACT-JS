@@ -8,7 +8,7 @@ import { useDataLayerValue } from "./DataLayer";
 const spotify = new SpotifyWebApi();
 function App() {
   const [token, setToken] = useState(null);
-  const [{}, dispatch] = useDataLayerValue();
+  const [{ user }, dispatch] = useDataLayerValue();
   useEffect(() => {
     const hash = getTokenFromUrl();
     window.location.hash = "";
@@ -26,6 +26,8 @@ function App() {
     }
     console.log("I have a token", token);
   }, []);
+  console.log(user);
+
   return (
     <div className="app">
       {token ? <Player /> : <Login />}
