@@ -9,9 +9,9 @@ function Sidebar() {
         src="https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg"
         alt=""
       />
-      <SidebarOption option="Home" />
-      <SidebarOption option="Search" />
-      <SidebarOption option="Your Library" />
+      <SidebarOption title="Home" />
+      <SidebarOption title="Search" />
+      <SidebarOption title="Your Library" />
     </div>
   );
 }
