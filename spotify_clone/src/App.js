@@ -26,13 +26,11 @@ function App() {
         });
       });
     }
-    console.log("I have a token", token);
   }, []);
-  console.log(user);
 
   return (
     <div className="app">
-      {token ? <Player /> : <Login />}
+      {token ? <Player spotify={spotify} /> : <Login />}
       <Login />
     </div>
   );
