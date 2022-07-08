@@ -4,7 +4,7 @@ import Login from "./Login";
 import { getTokenFromUrl } from "./spotify";
 import SpotifyWebApi from "spotify-web-api-js";
 import Player from "./Player";
-import { DataLayer, useDataLayerValue } from "./DataLayer";
+import { useDataLayerValue } from "./DataLayer";
 const spotify = new SpotifyWebApi();
 function App() {
   const [{ user, token }, dispatch] = useDataLayerValue();
@@ -19,10 +19,15 @@ function App() {
       });
       spotify.setAccessToken(_token);
       spotify.getMe().then((user) => {
-        console.log(user);
         dispatch({
           type: "SET_USER",
           user: user,
+        });
+      });
+      spotify.getUserPlaylists().then((playlists) => {
+        dispatch({
+          type: "SET_PLAYLISTS",
+          playlists: playlists,
         });
       });
     }
