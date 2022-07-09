@@ -19,7 +19,17 @@ function Footer() {
         <RepeatIcon className="footer__green" />
       </div>
       <div className="footer__right">
-        <h1>Volume controls</h1>
+        <Grid container spacing={2}>
+          <Grid item>
+            <PlaylistPlayIcon />
+          </Grid>
+          <Grid item>
+            <VolumeDownIcon />
+          </Grid>
+          <Grid item xs>
+            <Slider aria-labelledby="continuous-slider" />
+          </Grid>
+        </Grid>{" "}
       </div>
     </div>
   );
