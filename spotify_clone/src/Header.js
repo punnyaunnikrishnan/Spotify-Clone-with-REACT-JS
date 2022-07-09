@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.css";
 import SearchIcon from "@material-ui/icons/Search";
-
+import { Avatar } from "@material-ui/core";
 function Header() {
   return (
     <div className="header">
@@ -12,7 +12,10 @@ function Header() {
           type="text"
         />
       </div>
-      <div className="header__right"></div>
+      <div className="header__right">
+        <Avatar src="" alt="PU" />
+        <h4>Punnya Unnikrishnan</h4>
+      </div>
     </div>
   );
 }
