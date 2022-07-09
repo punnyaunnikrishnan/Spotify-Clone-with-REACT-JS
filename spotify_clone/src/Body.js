@@ -11,6 +11,7 @@ function Body({ spotify }) {
         <div className="body__infoText">
           <strong>PLAYLIST</strong>
           <h2>Discover Weekly</h2>
+          <p>description...</p>
         </div>
       </div>
     </div>
