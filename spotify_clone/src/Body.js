@@ -2,7 +2,6 @@ import React from "react";
 import Header from "./Header";
 import "./Body.css";
 import { useDataLayerValue } from "./DataLayer";
-
 function Body({ spotify }) {
   const [{ discover_weekly }, dispatch] = useDataLayerValue();
   return (
@@ -16,8 +15,14 @@ function Body({ spotify }) {
           <p>{discover_weekly?.description}</p>
         </div>
       </div>
+      <div className="body__songs">
+        <div className="body__icons">
+          <PlayCircleFilledIcon />
+          <FavouriteIcon />
+          <MoreHorizIcon />
+        </div>
+      </div>
     </div>
   );
 }
-
 export default Body;
